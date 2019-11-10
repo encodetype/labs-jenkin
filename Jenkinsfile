@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+    stage('build') {
       steps {
-        sh '''npm test
-'''
+        sh 'docker pull node:latest'
+        sh 'npm test'
       }
     }
 
